@@ -27,3 +27,5 @@
 *.rbc
 
 /.bundle
+
+*.DS_Store
