@@ -30,8 +30,8 @@ module RedmineS3
       def establish_connection
         load_options unless @@s3_options[:access_key_id] && @@s3_options[:secret_access_key]
         options = {
-          :access_key_id => @@s3_options[:access_key_id],
-          :secret_access_key => @@s3_options[:secret_access_key]
+          :access_key_id => ENV['S3_KEY'],
+          :secret_access_key => ENV['S3_SECRET']
         }
         options[:s3_endpoint] = self.endpoint unless self.endpoint.nil?
         @conn = AWS::S3.new(options)
